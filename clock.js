@@ -37,6 +37,7 @@
     if (card.hidden || document.hidden) return;
     const friday = now < fridayEnd;
     card.querySelector('.phase').textContent = friday ? 'Black Friday' : 'Cyber Monday';
+    card.querySelector('.until-label').textContent = friday ? 'Our biggest sale ends in' : 'Cyber Monday ends in';
     const phaseStart = friday ? start : fridayEnd;
     const phaseEnd = friday ? fridayEnd : mondayEnd;
     const pct = Math.max(0, Math.min(100, 100 * (now - phaseStart) / (phaseEnd - phaseStart)));
