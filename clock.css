@@ -1,0 +1,43 @@
+/* Offer card for the static product-page review. */
+#offer{--ink:#f6f7e9;--lime:#cef280;box-sizing:border-box;display:flex;align-items:center;justify-content:space-between;gap:14px;width:100%;margin:16px 0 22px;padding:16px 18px;background:linear-gradient(112deg,#174d3e,#103e35 70%,#0a352e);border:1px solid #194f41;border-radius:14px;color:var(--ink);font-family:Arial,Helvetica,sans-serif;text-align:left;scroll-margin-top:125px}
+#offer[hidden]{display:none}
+#offer *{box-sizing:border-box}
+#offer .phase{display:block;font-size:10px;font-weight:750;line-height:1.2;letter-spacing:.15em;text-transform:uppercase;color:var(--lime)}
+#offer .offer-title{display:block;font-size:clamp(20px,2.2vw,28px);font-weight:800;letter-spacing:-.045em;line-height:1.1;margin:5px 0}
+#offer .coupon{font:inherit;font-size:12px;color:var(--ink);background:none;border:0;display:inline-flex;align-items:center;gap:5px;padding:4px 0;cursor:pointer}
+#offer .coupon strong{color:var(--lime);letter-spacing:.05em;border-bottom:1px dashed #b1cc96}
+#offer .coupon:focus-visible{outline:2px solid var(--lime);outline-offset:2px}
+#offer .copy-icon{width:13px;height:13px;fill:none;stroke:var(--lime);stroke-width:1.6}
+#offer .clock-column{flex:none;text-align:center}
+#offer .until{font-size:10px;line-height:1.2;font-weight:600;letter-spacing:.07em;margin-bottom:5px}
+#offer .clock{display:flex;gap:4px}
+#offer .unit{display:grid;justify-items:center;gap:4px}
+#offer .flap{position:relative;display:block;width:clamp(30px,3.4vw,41px);height:clamp(32px,3.5vw,40px);color:#183e32;font-variant-numeric:tabular-nums;perspective:160px;border-radius:5px;box-shadow:0 2px 0 #062e24}
+#offer .half{position:absolute;inset-inline:0;height:50%;overflow:hidden;backface-visibility:hidden}
+#offer .half i{position:absolute;inset-inline:0;height:200%;display:grid;place-items:center;font:750 clamp(20px,2.2vw,26px)/1 Arial,sans-serif;font-variant-numeric:tabular-nums;letter-spacing:-.035em}
+#offer .upper{top:0;transform-origin:bottom;background:#e8edda;border-radius:5px 5px 1px 1px}
+#offer .lower{bottom:0;transform-origin:top;background:#fbfcea;border-radius:1px 1px 5px 5px}
+#offer .upper i{top:0}#offer .lower i{bottom:0}
+#offer .flap:after{content:"";position:absolute;z-index:3;left:0;right:0;top:50%;height:1px;background:#3b5c483b}
+#offer .caption{font:650 8px/1.1 Arial,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:#d5e5cf}
+#offer .announce{position:absolute;width:1px;height:1px;clip-path:inset(50%);overflow:hidden;white-space:nowrap}
+.offer-selector-label{display:flex;align-items:center;gap:9px;margin:12px 0 8px;font:bold 20px/1.15 'Arial Narrow',Arial,sans-serif;letter-spacing:-.035em}.offer-selector-label:after{content:"";height:1px;background:#62817b;flex:1}
+@media(max-width:550px){#offer{padding:13px 12px;gap:6px;margin:14px 0 18px;border-radius:12px}#offer .offer-title{font-size:22px}#offer .flap{width:30px;height:32px}#offer .clock{gap:3px}}
+@media(max-width:350px){#offer{padding:12px 9px}#offer .offer-title{font-size:19px}#offer .flap{width:27px}}
+/* Mechanical face: a fall leaf over a fixed upper and lower leaf. */
+#offer{background:linear-gradient(110deg,#f0f4e7,#e5eddb);color:#123e31;border-color:#c4d2b9;padding-block:15px}
+#offer .phase{color:#426447}
+#offer .coupon{color:#274c3b}
+#offer .coupon strong{color:#154c30;border-color:#6c8e66}
+#offer .copy-icon{stroke:#346343}
+#offer .coupon:focus-visible{outline-color:#316848}
+#offer .until{color:#375c45;margin-bottom:6px}
+#offer .flap{width:clamp(35px,3.6vw,47px);height:clamp(36px,3.7vw,47px);color:#f5f8df;box-shadow:0 1px 0 #082d21,0 2px 0 #50705d,0 3px 0 #153c2b,0 4px 3px #203c272a}
+#offer .half i{font:650 clamp(26px,2.65vw,35px)/1 'Arial Narrow',Arial,sans-serif;font-variant-numeric:tabular-nums;letter-spacing:-.065em;padding-right:.06em}
+#offer .upper{background:linear-gradient(#174a35,#1e513b);border-top:1px solid #34624a}
+#offer .lower{background:linear-gradient(#123b2b,#214c38)}
+#offer .flap:after{height:1px;background:#092b1ee0;box-shadow:0 1px 0 #e7f4dc14}
+#offer .flap:before{content:'';position:absolute;z-index:4;left:0;right:0;top:calc(50% - 2px);height:4px;border-inline:2px solid #84a28b;pointer-events:none}
+#offer .unit{gap:7px}#offer .caption{color:#49674e}
+@media(max-width:550px){#offer{padding:12px;gap:8px}#offer .flap{width:35px;height:36px}}
+@media(max-width:350px){#offer{padding-inline:10px}#offer .flap{width:31px;height:34px}}
