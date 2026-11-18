@@ -1,30 +1,30 @@
-/* Product offer, November 2026. */
-#offer{--forest:#194a37;--accent:#297446;box-sizing:border-box;background:#f7f9f3;color:var(--forest);width:100%;margin:17px 0 20px;padding:14px clamp(14px,3.2%,24px) 10px;border-top:1px solid #a7b7a4;border-bottom:1px solid #c4cfbd;scroll-margin-top:125px;text-align:left;font-family:Arial,Helvetica,sans-serif}
+/* Compact product offer, using the product page's Oswald and Inter faces. */
+#offer{box-sizing:border-box;position:relative;display:flex;align-items:center;justify-content:space-between;gap:10px;width:100%;padding:8px 12px 9px;margin:12px 0 14px;border-radius:6px;overflow:hidden;background:#f2f6ef;color:#173f32;font-family:Inter,sans-serif;text-align:left;scroll-margin-top:125px}
 #offer[hidden]{display:none}
 #offer *{box-sizing:border-box}
-#offer .offer-heading{display:flex;align-items:flex-start;justify-content:space-between;gap:10px}
-#offer .phase{display:block;color:#193f2e;font:normal 29px/.98 Georgia,'Times New Roman',serif;letter-spacing:-.055em}
-#offer .until{display:block;margin-top:5px;font:500 11px/1.15 Arial,sans-serif;color:#506452}
-#offer .offer-terms{text-align:right}
-#offer .offer-title{display:block;color:#214830;font:650 15px/1.15 Arial,sans-serif;letter-spacing:-.03em}
-#offer .coupon{display:inline-flex;align-items:center;gap:4px;cursor:pointer;color:#425b47;font:400 11px/1.3 Arial,sans-serif;background:none;border:0;border-radius:0;padding:4px 0}
-#offer .coupon strong{font-weight:700;letter-spacing:.04em;border-bottom:1px dotted #709579}
-#offer .coupon svg{width:12px;height:12px;fill:none;stroke:currentColor;stroke-width:1.5}
-#offer .coupon:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-#offer .clock{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));margin:11px -3px 13px}
-#offer .unit{text-align:center;position:relative;min-width:0}
-#offer .unit+.unit:before{content:':';position:absolute;left:0;top:.09em;transform:translateX(-50%);color:#9bad98;font:300 clamp(22px,3.1vw,31px)/1 Arial,sans-serif}
-#offer .digits{display:inline-flex;align-items:center;justify-content:center;height:1.01em;color:var(--forest);font:400 clamp(36px,4.3vw,54px)/1 Arial,Helvetica,sans-serif;font-variant-numeric:tabular-nums;letter-spacing:-.065em}
-#offer .unit:last-child .digits{color:var(--accent);font-weight:650}
-#offer .digits>span{display:block;position:relative;width:.56em;height:1em;overflow:hidden}
-#offer .digits i{position:absolute;inset:0 0 0 -.02em;font:inherit;line-height:1;color:inherit}
-#offer .caption{display:block;font:500 10px/1.2 Arial,sans-serif;color:#516252;margin-top:3px}
-#offer .unit:last-child .caption{font-weight:700;color:var(--accent)}
-#offer .timeline{position:relative;height:3px;background:#d4ddce;border-radius:3px}
-#offer .timeline>span{display:block;height:100%;width:var(--elapsed,0%);background:#528051;border-radius:inherit;position:relative}
-#offer .timeline>span:after{content:'';position:absolute;right:-2px;top:-1px;width:5px;height:5px;border-radius:50%;background:#38673b}
-#offer .dates{display:flex;justify-content:space-between;margin-top:5px;color:#526452;font:500 10px/1.2 Arial,sans-serif}
+#offer .offer-title{display:block;font:700 19px/1.15 Oswald,sans-serif}
+#offer .coupon{display:inline-flex;align-items:center;gap:4px;min-height:24px;padding:2px 0;border:0;background:transparent;color:inherit;font:400 11px/1.2 Inter,sans-serif;cursor:pointer}
+#offer .coupon strong{font-weight:700;border-bottom:1px dotted #67836d}
+#offer .coupon:focus-visible{outline:2px solid #245c46;outline-offset:1px}
+#offer .copy-icon{width:12px;height:12px;stroke:currentColor;fill:none;stroke-width:1.5}
+#offer .clock-column{text-align:center;flex:none}
+#offer .until{margin:0 0 4px;font:600 10px/1.1 Inter,sans-serif}
+#offer .clock{display:flex;gap:3px}
+#offer .unit{display:grid;justify-items:center;gap:4px}
+#offer .flap{position:relative;width:30px;height:28px;border-radius:4px;color:#fbf9e9;perspective:140px;box-shadow:0 2px 0 #123b29}
+#offer .half{position:absolute;inset-inline:0;height:50%;overflow:hidden;backface-visibility:hidden}
+#offer .half i{position:absolute;inset-inline:0;height:200%;display:grid;place-items:center;font:750 clamp(20px,2.2vw,26px)/1 Arial,sans-serif;font-variant-numeric:tabular-nums;letter-spacing:-.035em}
+#offer .upper{top:0;transform-origin:bottom;background:#e8edda;border-radius:5px 5px 1px 1px}
+#offer .lower{bottom:0;transform-origin:top;background:#fbfcea;border-radius:1px 1px 5px 5px}
+#offer .upper i{top:0}#offer .lower i{bottom:0}
+#offer .flap:after{content:"";position:absolute;z-index:3;left:0;right:0;top:50%;height:1px;background:#3b5c483b}
+
+#offer .half i{font:600 22px/1 Oswald,sans-serif;letter-spacing:0;font-variant-numeric:tabular-nums}
+#offer .upper{background:#22513e;border-radius:4px 4px 0 0}
+#offer .lower{background:#183f30;border-radius:0 0 4px 4px}
+#offer .flap:after{background:#092c2080}
+#offer .caption{font:500 8px/1.1 Inter,sans-serif;text-transform:uppercase;color:#47604a}
+#offer .timeline{position:absolute;bottom:0;left:0;right:0;height:2px;background:#d7e3d6}
+#offer .timeline>span{display:block;height:100%;width:var(--elapsed,0%);background:#668f6c}
 #offer .announce{position:absolute;width:1px;height:1px;clip-path:inset(50%);overflow:hidden;white-space:nowrap}
 .offer-selector-label{display:flex;align-items:center;gap:9px;margin:12px 0 8px;font:bold 20px/1.15 'Arial Narrow',Arial,sans-serif;letter-spacing:-.035em}.offer-selector-label:after{content:'';height:1px;background:#62817b;flex:1}
-@media(min-width:800px){#offer .digits{font-size:clamp(38px,3.35vw,51px)}}
-@media(max-width:350px){#offer{padding-inline:10px}#offer .digits{font-size:34px}#offer .phase{font-size:25px}#offer .offer-title{font-size:14px}}
