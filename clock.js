@@ -17,8 +17,14 @@
     if (previous === value) return;
     tile.dataset.value = value;
     tile.querySelectorAll('.turn').forEach(el => el.remove());
-    tile.querySelectorAll('i').forEach(el => el.textContent = value);
-    if (!previous || motion.matches || !tile.animate) return;
+    const top = tile.querySelector('.upper i');
+    const bottom = tile.querySelector('.lower i');
+    top.textContent = value;
+    if (!previous || motion.matches || !tile.animate) {
+      bottom.textContent = value;
+      return;
+    }
+    bottom.textContent = previous;
     const faces = [
       ['upper', previous, ['rotateX(0deg)', 'rotateX(-90deg)'], 0],
       ['lower', value, ['rotateX(90deg)', 'rotateX(0deg)'], 135]
@@ -29,7 +35,10 @@
       leaf.firstElementChild.textContent = digits;
       tile.append(leaf);
       const animation = leaf.animate(angles.map(transform => ({transform})), {duration: 145, delay, fill:'both', easing:'ease-in-out'});
-      animation.onfinish = () => leaf.remove();
+      animation.onfinish = () => {
+        if (side === 'lower' && tile.dataset.value === value) bottom.textContent = value;
+        leaf.remove();
+      };
     }
   }
   let job;
@@ -38,7 +47,12 @@
     const now = Date.now() + offset;
     card.hidden = now < start || now >= mondayEnd;
     announcement.hidden = card.hidden;
-    if (card.hidden || document.hidden) return;
+    if (document.hidden || now >= mondayEnd) return;
+    if (now < start) {
+      // Keep long waits within the browser timeout range.
+      job = setTimeout(update, Math.min(start - now, 2147483647));
+      return;
+    }
     const friday = now < fridayEnd;
     card.querySelector('.phase').textContent = friday ? 'Black Friday' : 'Cyber Monday';
     card.querySelector('.until-label').textContent = friday ? 'Our biggest sale ends in' : 'Cyber Monday ends in';
