@@ -53,3 +53,28 @@
   #offer .coupon strong{font-size:20px}
   #offer .until{font-size:9px}
 }
+
+/* Announcement above the main navigation. */
+#announcement{background:#00594d;color:white;font-family:Inter,sans-serif}
+#announcement[hidden]{display:none}
+#announcement .ann-inner{display:flex;align-items:center;justify-content:center;gap:24px;padding:6px 12px}
+#announcement .ann-offer{display:flex;align-items:center;gap:13px}
+#announcement .ann-heading{font:700 20px/1.15 Oswald,sans-serif;letter-spacing:.015em;text-transform:uppercase}
+#announcement .ann-deal{font:500 13px/1.4 Inter,sans-serif;white-space:nowrap}
+#announcement .coupon{display:inline;padding:0;border:0;background:transparent;color:inherit;font:inherit;cursor:pointer}
+#announcement .coupon:focus-visible{outline:2px solid #c4ec71;outline-offset:2px}
+#announcement .coupon strong{font-weight:700;color:#d4f48f}
+#announcement .ann-clock{display:flex;gap:7px;align-items:center}
+#announcement .ann-unit{position:relative;display:grid;gap:2px;justify-items:center;width:28px}
+#announcement .ann-unit+.ann-unit:before{content:":";position:absolute;left:-5px;top:2px;font:700 13px/1 Inter,sans-serif;color:#cbdfcc}
+#announcement .ann-unit b{display:block;width:100%;border-radius:3px;background:#cef08e;color:#101810;font:600 17px/21px Oswald,sans-serif;text-align:center;font-variant-numeric:tabular-nums}
+#announcement .ann-unit small{color:#ebf2e7;font:600 8px/1.1 Inter,sans-serif;text-transform:uppercase;letter-spacing:.025em}
+@media(max-width:600px){
+  #announcement .ann-inner{gap:14px;padding:5px 8px}
+  #announcement .ann-offer{display:grid;gap:2px}
+  #announcement .ann-heading{font-size:16px}
+  #announcement .ann-deal{font-size:11px}
+  #announcement .ann-clock{gap:5px}
+  #announcement .ann-unit{width:22px}
+  #announcement .ann-unit+.ann-unit:before{left:-4px}
+}

@@ -1,5 +1,8 @@
 (() => {
   const card = document.querySelector('#offer');
+  const announcement = document.querySelector('#announcement');
+  const bannerHeading = announcement.querySelector('.ann-heading');
+  const bannerDigits = announcement.querySelectorAll('.ann-unit b');
   const fridayEnd = Date.parse('2026-11-28T00:00:00+01:00');
   const mondayEnd = Date.parse('2026-12-01T00:00:00+01:00');
   // The alternate review link advances only this preview clock.
@@ -34,11 +37,13 @@
     clearTimeout(job);
     const now = Date.now() + offset;
     card.hidden = now < start || now >= mondayEnd;
+    announcement.hidden = card.hidden;
     if (card.hidden || document.hidden) return;
     const friday = now < fridayEnd;
     card.querySelector('.phase').textContent = friday ? 'Black Friday' : 'Cyber Monday';
-    card.querySelector('.until-label').textContent = friday ? 'Our best sale ends in' : 'Cyber Monday ends in';
+    card.querySelector('.until-label').textContent = friday ? 'Our biggest sale ends in' : 'Cyber Monday ends in';
     card.querySelector('.finish-date').textContent = friday ? 'Ends Nov 27' : 'Ends Nov 30';
+    bannerHeading.textContent = friday ? 'Our biggest sale' : 'Cyber Monday sale';
     const phaseStart = friday ? start : fridayEnd;
     const phaseEnd = friday ? fridayEnd : mondayEnd;
     const pct = Math.max(0, Math.min(100, 100 * (now - phaseStart) / (phaseEnd - phaseStart)));
@@ -48,19 +53,33 @@
     bar.setAttribute('aria-valuetext', Math.floor(pct) + '% elapsed, ' + bar.title);
     const s = Math.ceil(((friday ? fridayEnd : mondayEnd) - now) / 1000);
     const parts = [Math.floor(s/86400), Math.floor(s/3600)%24, Math.floor(s/60)%60, s%60];
-    parts.forEach((n,i) => paint(units[i], String(n).padStart(2,'0')));
+    parts.forEach((n, i) => {
+      const value = String(n).padStart(2, '0');
+      paint(units[i], value);
+      if (bannerDigits[i].textContent !== value) bannerDigits[i].textContent = value;
+    });
     card.querySelector('time').dateTime = friday ? '2026-11-28T00:00:00+01:00' : '2026-12-01T00:00:00+01:00';
     card.querySelector('time').textContent = friday ? 'Ends November 27 at midnight, Stockholm time.' : 'Ends November 30 at midnight, Stockholm time.';
     job = setTimeout(update, 1005 - (now % 1000));
   }
   document.addEventListener('visibilitychange', update);
   update();
-  const btn=card.querySelector('.coupon');
-  let clearFeedback;
-  btn.addEventListener('click',async () => {
-    try { await navigator.clipboard.writeText('BLACK20'); btn.firstElementChild.textContent='Copied'; }
-    catch { const range=document.createRange();range.selectNodeContents(btn.querySelector('strong'));const selection=getSelection();selection.removeAllRanges();selection.addRange(range);btn.firstElementChild.textContent='Copy code'; }
-    clearTimeout(clearFeedback);
-    clearFeedback=setTimeout(()=>btn.firstElementChild.textContent='Use code',1800);
-  });
+  for (const button of [card.querySelector('.coupon'), announcement.querySelector('.coupon')]) {
+    let resetLabel;
+    button.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText('BLACK20');
+        button.firstElementChild.textContent = 'Copied';
+      } catch {
+        const range = document.createRange();
+        range.selectNodeContents(button.querySelector('strong'));
+        const selection = getSelection();
+        selection.removeAllRanges();
+        selection.addRange(range);
+        button.firstElementChild.textContent = 'Copy code';
+      }
+      clearTimeout(resetLabel);
+      resetLabel = setTimeout(() => button.firstElementChild.textContent = 'Use code', 1800);
+    });
+  }
 })();
