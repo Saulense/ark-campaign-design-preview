@@ -1,17 +1,17 @@
 /* Compact product offer, using the product page's Oswald and Inter faces. */
-#offer{box-sizing:border-box;position:relative;display:flex;align-items:center;justify-content:space-between;gap:10px;width:100%;padding:8px 9px 10px;margin:12px 0 14px;border-radius:6px;overflow:hidden;background:#f8faf6;color:#173f32;font-family:Inter,sans-serif;text-align:left;scroll-margin-top:125px}
+#offer{box-sizing:border-box;position:relative;display:flex;align-items:center;justify-content:space-between;gap:10px;width:100%;padding:19px 12px 23px;margin:23px 0 14px;border-radius:10px;background:#00594d;color:#fff;font-family:Inter,sans-serif;text-align:left;scroll-margin-top:125px}
 #offer[hidden]{display:none}
 #offer *{box-sizing:border-box}
-#offer .coupon{display:inline-flex;align-items:center;gap:5px;padding:0 0 3px;border:0;background:transparent;color:#093d31;font:400 11px/1.2 Inter,sans-serif;cursor:pointer;white-space:nowrap}
+#offer .coupon{display:inline-flex;align-items:center;gap:5px;padding:0 0 3px;border:0;background:transparent;color:#fff;font:400 11px/1.2 Inter,sans-serif;cursor:pointer;white-space:nowrap}
 #offer .coupon strong{display:inline-block;padding:0 1px;background:linear-gradient(transparent 78%,#c4eb77 78%);font:700 22px/1.12 Oswald,sans-serif;letter-spacing:-.025em}
-#offer .offer-title{display:flex;align-items:baseline;gap:3px;margin-top:3px;color:#123e31;font:400 11px/1.2 Inter,sans-serif;white-space:nowrap}
+#offer .offer-title{display:flex;align-items:baseline;gap:3px;margin-top:3px;color:#fff;font:400 11px/1.2 Inter,sans-serif;white-space:nowrap}
 #offer .offer-title b,#offer .offer-title strong{font:700 15px/1.05 Oswald,sans-serif;text-transform:uppercase}
-#offer .offer-title strong{display:inline-block;padding:2px 4px;background:#c4eb77;box-shadow:1.5px 2px 0 #123f31;transform:rotate(-2deg)}
+#offer .offer-title strong{display:inline-block;padding:2px 4px;color:#103d31;background:#c4eb77;box-shadow:1.5px 2px 0 #123f31;transform:rotate(-2deg)}
 #offer .phase{position:absolute;width:1px;height:1px;clip-path:inset(50%);overflow:hidden}
-#offer .coupon:focus-visible{outline:2px solid #245c46;outline-offset:1px}
+#offer .coupon:focus-visible{outline:2px solid #c4ec71;outline-offset:1px}
 #offer .copy-icon{width:12px;height:12px;stroke:currentColor;fill:none;stroke-width:1.5}
 #offer .clock-column{text-align:center;flex:none}
-#offer .until{margin:0 0 4px;font:600 10px/1.1 Inter,sans-serif}
+#offer .until{position:absolute;top:0;left:50%;transform:translate(-50%,-50%);margin:0;padding:4px 13px;border:1px solid #17483d;border-radius:99px;background:#d1f18c;color:#123e31;white-space:nowrap;text-transform:uppercase;letter-spacing:.04em;font:700 10px/1.2 Inter,sans-serif}
 #offer .clock{display:flex;gap:3px}
 #offer .unit{display:grid;justify-items:center;gap:6px}
 #offer .flap{position:relative;width:31px;height:29px;border-radius:4px;color:#fbf9e9;perspective:140px;box-shadow:0 1px 0 #0a2e20,0 2px 0 #58816b,0 3px 0 #0a3223,0 4px 3px #153d252b}
@@ -26,9 +26,10 @@
 #offer .upper{background:linear-gradient(#376750,#1b4935);box-shadow:inset 0 1px #60836e;border-radius:4px 4px 0 0}
 #offer .lower{background:linear-gradient(#123a2a,#28553f);border-radius:0 0 4px 4px}
 #offer .flap:after{background:#092c2080}
-#offer .caption{font:500 8px/1.1 Inter,sans-serif;text-transform:uppercase;color:#47604a}
-#offer .timeline{position:absolute;bottom:0;left:0;right:0;height:2px;background:#d7e3d6}
-#offer .timeline>span{display:block;height:100%;width:var(--elapsed,0%);background:#668f6c}
+#offer .caption{font:500 8px/1.1 Inter,sans-serif;text-transform:uppercase;color:#e0ebe2}
+#offer .timeline{position:absolute;bottom:9px;left:12px;right:12px;height:6px;border-radius:6px;background:rgba(255,255,255,.25);box-shadow:inset 0 1px 2px #00382d55}
+#offer .timeline>span{display:block;height:100%;width:var(--elapsed,0%);position:relative;border-radius:inherit;background:linear-gradient(90deg,#acd75f,#d9f794);box-shadow:0 0 7px #c4ec7150}
+#offer .timeline>span::after{content:"";position:absolute;right:0;top:50%;transform:translate(50%,-50%);width:8px;height:8px;border-radius:50%;background:#edffc7;box-shadow:0 0 0 1.5px #346c40,0 0 6px #c4ec7180}
 #offer .announce{position:absolute;width:1px;height:1px;clip-path:inset(50%);overflow:hidden;white-space:nowrap}
 .offer-selector-label{display:flex;align-items:center;gap:9px;margin:12px 0 8px;font:bold 20px/1.15 'Arial Narrow',Arial,sans-serif;letter-spacing:-.035em}.offer-selector-label:after{content:'';height:1px;background:#62817b;flex:1}
 @media(max-width:350px){
