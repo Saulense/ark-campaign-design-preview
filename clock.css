@@ -11,7 +11,7 @@
 #offer .coupon:focus-visible{outline:2px solid #c4ec71;outline-offset:1px}
 #offer .copy-icon{width:12px;height:12px;stroke:currentColor;fill:none;stroke-width:1.5}
 #offer .clock-column{text-align:center;flex:none}
-#offer .until{position:absolute;top:0;left:50%;transform:translate(-50%,-50%);margin:0;padding:4px 13px;border:1px solid #17483d;border-radius:99px;background:#d1f18c;color:#123e31;white-space:nowrap;text-transform:uppercase;letter-spacing:.04em;font:700 10px/1.2 Inter,sans-serif}
+#offer .until{position:absolute;top:0;left:50%;transform:translate(-50%,-50%);margin:0;padding:4px 15px;border:1px solid #17483d;border-radius:99px;background:#d1f18c;color:#123e31;white-space:nowrap;text-transform:uppercase;letter-spacing:.04em;box-shadow:0 2px 0 #103e31;font:700 13px/1.2 Inter,sans-serif}
 #offer .clock{display:flex;gap:3px}
 #offer .unit{display:grid;justify-items:center;gap:6px}
 #offer .flap{position:relative;width:31px;height:29px;border-radius:4px;color:#000;perspective:140px;box-shadow:0 1px 0 #0a2e20,0 2px 0 #88a952,0 3px 0 #0a3223,0 4px 3px #153d252b}
@@ -51,7 +51,7 @@
   #offer .flap{width:27px}
   #offer .coupon{gap:3px}
   #offer .coupon strong{font-size:20px}
-  #offer .until{font-size:9px}
+  #offer .until{font-size:12px}
 }
 
 /* Announcement above the main navigation. */
